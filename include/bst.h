@@ -23,8 +23,8 @@ class BST {
   BST();
   void addPiece(T);
   void print();
-  int search2(T);
-  int height();
+  int search(T);
+  int depth();
 };
 template <typename T>
 BST<T> :: BST():root(nullptr) {}
@@ -82,7 +82,7 @@ int BST<T> :: search1(Node *root, T value) {
   }
 }
 template <typename T>
-int BST<T> :: search2(T value) {
+int BST<T> :: search(T value) {
   return search1(root, value);
 }
 template <typename T>
@@ -95,7 +95,7 @@ void BST<T> :: HeightTree(Node* root, int l, int* h) {
   HeightTree(root->right, l + 1, h);
 }
 template <typename T>
-int BST<T> :: height() {
+int BST<T> :: depth() {
   int h = 0;
   HeightTree(root, -1, &h);
   return h;
