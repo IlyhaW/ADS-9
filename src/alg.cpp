@@ -20,11 +20,11 @@ BST<std::string> makeTree(const char* filename) {
       word += ch;
     } else {
       if (word != "")
-        str.add(word);
+        str.addPiece(word);
       word = "";
     }
     if (ch == ' ') {
-      str.add(word);
+      str.addPiece(word);
       word = "";
     }
   }
